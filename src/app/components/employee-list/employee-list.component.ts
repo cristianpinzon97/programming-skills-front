@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../model/employee';
 import { EmployeeService } from '../../services/employee.service';
 
+/**
+ * Employee component to list the employees 
+ */
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -18,6 +21,9 @@ export class EmployeeListComponent implements OnInit {
     
   }
 
+  /**
+   * Gets all the employees
+   */
   private getEmployees() {
     this.employeeService.getEmployees().subscribe((data) => {
       this.employees = data;

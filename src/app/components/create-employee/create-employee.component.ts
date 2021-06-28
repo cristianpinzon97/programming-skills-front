@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from '../../model/employee';
 import { EmployeeService } from '../../services/employee.service';
-
+/**
+ * Component that creates or updates an employee
+ */
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
@@ -18,6 +20,9 @@ export class CreateEmployeeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * saves the employee on database
+   */
    private saveEmployee() {
      if (!this.employee.id) {
      this.getEmployeeNextId();
@@ -32,17 +37,25 @@ export class CreateEmployeeComponent implements OnInit {
     );
   }
 
-
+  /**
+   * Gets the next id for the employee if necessary
+   */
   private getEmployeeNextId() {
     this.employeeService.getEmployees().subscribe((data) => {
       this.employee.id = data.length+1;
     });
   }
 
+  /**
+   * navigates to the employees page
+   */
   private goToEmployees() {
     this.route.navigate(['/employeees']);
   }
 
+  /**
+   * Submit method to save the employee form
+   */
   onSubmit() {
     this.saveEmployee();
 
