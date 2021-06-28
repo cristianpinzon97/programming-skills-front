@@ -1,0 +1,27 @@
+<div class="col-mf-6 offset-md-3">
+    <h3>Create or update Employee</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="employee.id" name="id" />
+        </div>
+        <div class="form-group">
+            <label>Full name</label>
+            <input type="text" class="form-control" id="fullName" [(ngModel)]="employee.fullName" name="fullName" />
+        </div>
+        <div class="form-group">
+            <label>Function</label>
+            <input type="text" class="form-control" id="function" [(ngModel)]="employee.function" name="function" />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="employee.email" name="email" />
+        </div>
+        <div class="form-group">
+            <label>Phone number</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="employee.phone" name="phone" />
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>

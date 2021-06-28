@@ -1,0 +1,25 @@
+<h2>Employee List</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Full name</th>
+            <th>Funtcion</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Is a boss</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.fullName}}</td>
+            <td>{{employee.function}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td *ngIf="!employee.boss">YES</td>
+            <td *ngIf="employee.boss">NO</td>
+        </tr>
+    </tbody>
+</table>
